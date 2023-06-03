@@ -10,6 +10,17 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
+HELP.md
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.factorypath
+.settings
+.springBeans
+.sts4-cache
+
 # Eclipse m2e generated files
 # Eclipse Core
 .project
