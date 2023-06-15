@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"  />
+<title th:text="${titulo}"> </title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"></link>
+</head>
+<body th:onload="clock()">
+<h1 class="color-rojo" th:text="${titulo}"></h1>
+<h2 class="color-azul"> Hola Estudiantes </h2>
+<img  th:src="@{/images/spring.png}"></img>
+
+<div th:if="${usuarios.isEmpty()}">no hay usuarios en la lista</div>
+
+<table th:if="${not usuarios.isEmpty()}">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>TIPO</th>
+			<th>NOMBRE</th>
+			<th>DNI</th>
+			<th>EMAIL</th>
+			<th>DIRECCION</th>
+			<th>TELEFONO</th>
+			<th>CONSTRASEÑA</th>
+			<th>ACCIONES</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="usuario: ${usuarios}">
+		<td th:text="${usuario.usuId}"></td>
+		<td th:text="${usuario.usuTip}"></td>
+		<td th:text="${usuario.usuNom}"></td>
+		<td th:text="${usuario.usuDni}"></td>
+		<td th:text="${usuario.usuEma}"></td>
+		<td th:text="${usuario.usuDir}"></td>
+		<td th:text="${usuario.usuTel}"></td>
+		<td th:text="${usuario.usuCon}"></td>
+		<td>
+				<a th:href="@{'/usuarios/edit/' + ${usuario.usuId}}">Editar</a>
+				 <a th:href="@{/home/delete/{id}(id=${usuario.usuId})}">Eliminar</a>
+			</td>
+	</tbody>
+</table>
+</body>
+</html>
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

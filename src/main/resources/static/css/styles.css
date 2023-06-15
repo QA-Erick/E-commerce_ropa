@@ -1,0 +1,38 @@
+h1.color-rojo{
+	color:red;
+}
+
+h2.color-azul {
+	color:blue;
+}
+
+div {
+	color: gray;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 20px;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+	margin-top: 40px;
+	width: 200px;
+	height: auto;
+}
