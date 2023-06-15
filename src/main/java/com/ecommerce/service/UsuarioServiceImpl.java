@@ -25,5 +25,15 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void deleteUsuario(Long usuId) {
         this.usuarioRepository.deleteById(usuId);
     }
+	
+	 @Override
+	    public void saveUsuario(Usuario usuario) {
+	        usuarioRepository.save(usuario);
+	}
+	 
+	 @Override
+	    public Usuario getUsuarioById(Long usuId) {
+	        return usuarioRepository.findById(usuId).orElse(null);
+	 }
 
 }

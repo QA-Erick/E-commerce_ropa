@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Agregar Usuario</title>
+</head>
+<body>
+    <h1>Agregar Usuario</h1>
+    <form th:action="@{/home/add}" method="post">
+        <label for="usuTip">Tipo:</label>
+        <input type="text" id="usuTip" name="usuTip"/>
+
+        <label for="usuNom">Nombre:</label>
+        <input type="text" id="usuNom" name="usuNom"/>
+
+        <label for="usuDni">DNI:</label>
+        <input type="text" id="usuDni" name="usuDni"/>
+
+        <label for="usuEma">Email:</label>
+        <input type="text" id="usuEma" name="usuEma"/>
+
+        <label for="usuDir">Dirección:</label>
+        <input type="text" id="usuDir" name="usuDir"/>
+
+        <label for="usuTel">Teléfono:</label>
+        <input type="text" id="usuTel" name="usuTel"/>
+
+        <label for="usuCon">Contraseña:</label>
+        <input type="password" id="usuCon" name="usuCon"/>
+
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>

@@ -9,4 +9,7 @@ public interface UsuarioService {
 	public List<Usuario> getAllUsuarios();
 	
 	public void deleteUsuario(Long usuId);
+	
+	void saveUsuario(Usuario usuario);
+    Usuario getUsuarioById(Long usuId);
 }

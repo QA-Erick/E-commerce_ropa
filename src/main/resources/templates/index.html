@@ -37,11 +37,14 @@
 		<td th:text="${usuario.usuTel}"></td>
 		<td th:text="${usuario.usuCon}"></td>
 		<td>
-				<a th:href="@{'/usuarios/edit/' + ${usuario.usuId}}">Editar</a>
-				 <a th:href="@{/home/delete/{id}(id=${usuario.usuId})}">Eliminar</a>
+				<a th:href="@{/home/edit/{id}(id=${usuario.usuId})}">Editar</a>
+				<a th:href="@{/home/delete/{id}(id=${usuario.usuId})}">Eliminar</a>
 			</td>
 	</tbody>
 </table>
+
+<a th:href="@{/home/add}">Agregar Usuario</a>
+
 </body>
 </html>
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
