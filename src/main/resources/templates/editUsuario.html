@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit Usuario</title>
+</head>
+<body>
+    <h1>Edit Usuario</h1>
+    <form th:action="@{/home/edit/{usuId}(usuId=${usuario.usuId})}" th:object="${usuario}" method="post">
+        <input type="hidden" th:field="*{usuId}"/>
+        
+        <label for="usuTip">Tipo Usuario:</label>
+        <input type="text" id="usuTip" th:field="*{usuTip}"/>
+        
+        <label for="usuNom">Nombres Usuario:</label>
+        <input type="text" id="usuNom" th:field="*{usuNom}"/>
+        
+        <label for="usuDni">DNI Usuario:</label>
+        <input type="text" id="usuDni" th:field="*{usuDni}"/>
+        
+        <label for="usuEma">Email Usuario:</label>
+        <input type="text" id="usuEma" th:field="*{usuEma}"/>
+        
+        <label for="usuDir">Dirección Usuario:</label>
+        <input type="text" id="usuDir" th:field="*{usuDir}"/>
+        
+        <label for="usuTel">Teléfono Usuario:</label>
+        <input type="text" id="usuTel" th:field="*{usuTel}"/>
+        
+        <label for="usuCon">Contraseña Usuario:</label>
+        <input type="password" id="usuCon" th:field="*{usuCon}"/>
+        
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

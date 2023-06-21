@@ -47,7 +47,7 @@ public class UsuarioController {
 		return usuarios;
 	}
 	
-	/*
+	
 	@GetMapping("/edit/{usuId}")
     public String showEditForm(@PathVariable("usuId") Long usuId, Model model) {
         Usuario usuario = usuarioService.getUsuarioById(usuId);
@@ -59,9 +59,9 @@ public class UsuarioController {
     public String updateUsuario(@PathVariable("usuId") Long usuId, @ModelAttribute Usuario usuario) {
         usuario.setUsuId(usuId);
         usuarioService.saveUsuario(usuario);
-        return "redirect:/index";
+        return "redirect:/home";
     }
-    */
+    
     
     @GetMapping("/add")
     public String showAddForm(Model model) {
