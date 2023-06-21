@@ -31,7 +31,7 @@ public class UsuarioController {
 	@GetMapping({"/index","/","","/home"})
 	public String index(Model model) {
 		model.addAttribute("titulo",title);
-		return "index";
+		return "indexUsuario";
 	}
 	
 	@GetMapping("/delete/{usuId}")

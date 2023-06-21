@@ -3,34 +3,53 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Edit Usuario</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
-    <h1>Edit Usuario</h1>
-    <form th:action="@{/home/edit/{usuId}(usuId=${usuario.usuId})}" th:object="${usuario}" method="post">
-        <input type="hidden" th:field="*{usuId}"/>
+    <div class="container">
+        <h1>Edit Usuario</h1>
+        <form th:action="@{/home/edit/{usuId}(usuId=${usuario.usuId})}" th:object="${usuario}" method="post">
+            <input type="hidden" th:field="*{usuId}"/>
         
-        <label for="usuTip">Tipo Usuario:</label>
-        <input type="text" id="usuTip" th:field="*{usuTip}"/>
+            <div class="form-group">
+                <label for="usuTip">Tipo Usuario:</label>
+                <input type="text" id="usuTip" th:field="*{usuTip}" class="form-control"/>
+            </div>
         
-        <label for="usuNom">Nombres Usuario:</label>
-        <input type="text" id="usuNom" th:field="*{usuNom}"/>
+            <div class="form-group">
+                <label for="usuNom">Nombres Usuario:</label>
+                <input type="text" id="usuNom" th:field="*{usuNom}" class="form-control"/>
+            </div>
         
-        <label for="usuDni">DNI Usuario:</label>
-        <input type="text" id="usuDni" th:field="*{usuDni}"/>
+            <div class="form-group">
+                <label for="usuDni">DNI Usuario:</label>
+                <input type="text" id="usuDni" th:field="*{usuDni}" class="form-control"/>
+            </div>
         
-        <label for="usuEma">Email Usuario:</label>
-        <input type="text" id="usuEma" th:field="*{usuEma}"/>
+            <div class="form-group">
+                <label for="usuEma">Email Usuario:</label>
+                <input type="text" id="usuEma" th:field="*{usuEma}" class="form-control"/>
+            </div>
         
-        <label for="usuDir">Dirección Usuario:</label>
-        <input type="text" id="usuDir" th:field="*{usuDir}"/>
+            <div class="form-group">
+                <label for="usuDir">Dirección Usuario:</label>
+                <input type="text" id="usuDir" th:field="*{usuDir}" class="form-control"/>
+            </div>
         
-        <label for="usuTel">Teléfono Usuario:</label>
-        <input type="text" id="usuTel" th:field="*{usuTel}"/>
+            <div class="form-group">
+                <label for="usuTel">Teléfono Usuario:</label>
+                <input type="text" id="usuTel" th:field="*{usuTel}" class="form-control"/>
+            </div>
         
-        <label for="usuCon">Contraseña Usuario:</label>
-        <input type="password" id="usuCon" th:field="*{usuCon}"/>
+            <div class="form-group">
+                <label for="usuCon">Contraseña Usuario:</label>
+                <input type="password" id="usuCon" th:field="*{usuCon}" class="form-control"/>
+            </div>
         
-        <button type="submit">Guardar</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    
+    <script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
