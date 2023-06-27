@@ -2,18 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title th:text="${titulo}"></title>
+    <title th:text="${titulo}">Registro de Nuevo Administrador</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center" th:text="${titulo}"></h1>
-
+        <h1 class="text-center" th:text="${titulo}">Registro de Nuevo Administrador</h1>
+		<a class="btn btn-success" th:href="@{/home/add}">Agregar Nuevo Administrador</a>
         <div class="alert alert-info" th:if="${usuarios.isEmpty()}">
-            No hay usuarios en la lista.
+            No hay administradores en la lista.
         </div>
-
+		
         <table class="table table-striped" th:if="${not usuarios.isEmpty()}">
             <thead class="thead-dark">
                 <tr>
@@ -45,20 +45,12 @@
                 </tr>
             </tbody>
         </table>
-
-        <a class="btn btn-success" th:href="@{/home/add}">Agregar Usuario</a>
     </div>
     
     <script th:src="@{/js/main.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>
-
-
-
-
-
-
 
 
 
