@@ -17,11 +17,6 @@ body {
 	color: #a4a3b5;
 }
 
-p {
-	font-weight: 600;
-	font-size: 15px;
-}
-
 .division {
 	float: none;
 	position: relative;
@@ -75,14 +70,6 @@ p {
 	letter-spacing: 1px;
 }
 
-.bn {
-	text-decoration: underline;
-}
-
-.bn:hover {
-	cursor: pointer;
-}
-
 .form-check-input {
 	margin-top: 8px !important;
 }
@@ -102,20 +89,10 @@ p {
 	font-size: 13px;
 }
 
-@media(min-width: 767px) {
-	.bn {
-		text-align: right;
-	}
-}
 
 @media(max-width: 767px) {
 	.form-check {
 		text-align: center;
-	}
-
-	.bn {
-		text-align: center;
-		align-items: center;
 	}
 }
 

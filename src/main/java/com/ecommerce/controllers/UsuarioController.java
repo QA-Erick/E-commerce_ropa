@@ -25,11 +25,6 @@ public class UsuarioController {
 		return "login";
 	}
 	
-	@GetMapping("/index")
-	public String index() {
-		return "index";
-	}
-	
     @GetMapping("/registro")
     public String registrarUsuario(Model model) {
         Usuario usuario = new Usuario();

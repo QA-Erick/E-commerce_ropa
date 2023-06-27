@@ -33,8 +33,8 @@ public class Producto implements Serializable {
 	@Column(name="prd_nom")
 	private String prdNom;
 
-	@Column(name="prd_des")
-	private String prdDes;
+	@Column(name="prd_img")
+	private String prdImg;
 
 	@Column(name="prd_pre")
 	private double prdPre;
