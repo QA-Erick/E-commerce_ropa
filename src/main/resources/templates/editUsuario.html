@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit Usuario</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Usuario</h1>
+        <form th:action="@{/edit/{usuId}(usuId=${usuario.usuId})}" th:object="${usuario}" method="post">
+            <input type="hidden" th:field="*{usuId}"/>
+        
+            <input type="hidden" id="usuTip" th:field="*{usuTip}"/>
+        
+            <div class="form-group">
+                <label for="usuNom">Nombres Usuario:</label>
+                <input type="text" id="usuNom" th:field="*{usuNom}" class="form-control" required autofocus/>
+            </div>
+        
+            <div class="form-group">
+                <label for="usuDni">DNI Usuario:</label>
+                <input type="text" id="usuDni" th:field="*{usuDni}" class="form-control" required/>
+            </div>
+        
+            <div class="form-group">
+                <label for="usuEma">Email Usuario:</label>
+                <input type="email" id="usuEma" th:field="*{usuEma}" class="form-control" required/>
+            </div>
+        
+            <div class="form-group">
+                <label for="usuDir">Dirección Usuario:</label>
+                <input type="text" id="usuDir" th:field="*{usuDir}" class="form-control" required/>
+            </div>
+        
+            <div class="form-group">
+                <label for="usuTel">Teléfono Usuario:</label>
+                <input type="text" id="usuTel" th:field="*{usuTel}" class="form-control" required/>
+            </div>
+        
+            <div class="form-group">
+                <label for="usuCon">Contraseña Usuario:</label>
+                <input type="password" id="usuCon" th:field="*{usuCon}" class="form-control" required/>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
