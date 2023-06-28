@@ -1,17 +1,17 @@
-package com.ecommerce.service;
+package com.ecommerce.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.ecommerce.models.Usuario;
 
-
 public interface UsuarioService {
+	Usuario findByUsuarioEmail(String email);
+	
+	void saveUsuario(Usuario usuario);
+	
 	public List<Usuario> getAllUsuarios();
 	
 	public void deleteUsuario(Long usuId);
-	
-	void saveUsuario(Usuario usuario);
 	
     Usuario getUsuarioById(Long usuId);
 }

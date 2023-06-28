@@ -8,40 +8,35 @@
 <body>
     <div class="container">
         <h1>Agregar Usuario</h1>
-        <form th:action="@{/home/add}" method="post">
-            <div class="form-group">
-                <label for="usuTip">Tipo:</label>
-                <input type="text" id="usuTip" name="usuTip" class="form-control"/>
-            </div>
-        
+        <form th:action="@{/add}" method="post">
             <div class="form-group">
                 <label for="usuNom">Nombre:</label>
-                <input type="text" id="usuNom" name="usuNom" class="form-control"/>
+                <input type="text" id="usuNom" name="usuNom" class="form-control" required autofocus/>
             </div>
         
             <div class="form-group">
                 <label for="usuDni">DNI:</label>
-                <input type="text" id="usuDni" name="usuDni" class="form-control"/>
+                <input type="text" id="usuDni" name="usuDni" class="form-control" required/>
             </div>
         
             <div class="form-group">
                 <label for="usuEma">Email:</label>
-                <input type="text" id="usuEma" name="usuEma" class="form-control"/>
+                <input type="email" id="usuEma" name="usuEma" class="form-control" required/>
             </div>
         
             <div class="form-group">
                 <label for="usuDir">Dirección:</label>
-                <input type="text" id="usuDir" name="usuDir" class="form-control"/>
+                <input type="text" id="usuDir" name="usuDir" class="form-control" required/>
             </div>
         
             <div class="form-group">
                 <label for="usuTel">Teléfono:</label>
-                <input type="text" id="usuTel" name="usuTel" class="form-control"/>
+                <input type="text" id="usuTel" name="usuTel" class="form-control" required/>
             </div>
         
             <div class="form-group">
                 <label for="usuCon">Contraseña:</label>
-                <input type="password" id="usuCon" name="usuCon" class="form-control"/>
+                <input type="password" id="usuCon" name="usuCon" class="form-control" required/>
             </div>
         
             <button type="submit" class="btn btn-primary">Agregar</button>

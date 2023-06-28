@@ -7,14 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import com.ecommerce.models.Usuario;
 
-
 @Repository
 public interface UsuarioDao extends CrudRepository<Usuario, Long> {
-	public List <Usuario> findAll();
-	
-	public void deleteById(Long usuId);
-	
+	Usuario findByUsuEma(String email);
+
 	Usuario save(Usuario usuario);
-	
-	
+
+	public List<Usuario> findAll();
+
+	public void deleteById(Long usuId);
 }

@@ -6,7 +6,7 @@ h2.color-azul {
 	color:blue;
 }
 
-div {
+.container {
 	color: gray;
 	font-size: 18px;
 	text-align: center;
