@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${titulo}"></title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+	<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+			aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+			<a class="navbar-brand" th:href="@{/index}">HOME</a>
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/comingsoon}">Proximamente</a>
+				</li>
+				<li class="nav-item" sec:authorize="hasRole('ADMIN')">
+					<a class="nav-link" th:href="@{/home}">Administrar usuarios</a>
+				</li>
+			</ul>
+			<span class="mx-sm-4" sec:authorize="isAuthenticated()"><a th:href="@{/logout}" class="btn btn-info">Cerrar Sesión</a></span>
+		</div>
+	</nav>
+    <div class="container">
+        <h1 class="text-center">Registro de Nuevo Administrador</h1>
+		<a class="btn btn-success" th:href="@{/add}">Agregar Nuevo Administrador</a>
+        <div class="alert alert-info" th:if="${usuarios.isEmpty()}">
+            No hay usuarios en la lista.
+        </div>
+		
+        <table class="table table-striped bg-light" th:if="${not usuarios.isEmpty()}">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>TIPO</th>
+                    <th>NOMBRE</th>
+                    <th>DNI</th>
+                    <th>EMAIL</th>
+                    <th>DIRECCION</th>
+                    <th>TELEFONO</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario: ${usuarios}">
+                    <td th:text="${usuario.usuId}"></td>
+                    <td th:text="${usuario.usuTip}"></td>
+                    <td th:text="${usuario.usuNom}"></td>
+                    <td th:text="${usuario.usuDni}"></td>
+                    <td th:text="${usuario.usuEma}"></td>
+                    <td th:text="${usuario.usuDir}"></td>
+                    <td th:text="${usuario.usuTel}"></td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{/edit/{id}(id=${usuario.usuId})}">Editar</a>
+                        <a class="btn btn-danger" th:href="@{/delete/{id}(id=${usuario.usuId})}">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

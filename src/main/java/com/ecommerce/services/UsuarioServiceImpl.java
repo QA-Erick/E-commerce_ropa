@@ -44,4 +44,19 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
 	public void saveUsuario(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
+
+	@Override
+	public List<Usuario> getAllUsuarios() {
+		return this.usuarioRepository.findAll();
+	}
+	
+	@Override
+    public void deleteUsuario(Long usuId) {
+        this.usuarioRepository.deleteById(usuId);
+    }
+
+	@Override
+	public Usuario getUsuarioById(Long usuId) {
+		return usuarioRepository.findById(usuId).orElse(null);
+	}
 }
