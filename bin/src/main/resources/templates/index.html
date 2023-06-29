@@ -16,16 +16,13 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-			<a class="navbar-brand" th:href="@{/index}">TIENDA</a><!--MODIFICAMOS DE HOME A TIENDA-->
+			<a class="navbar-brand" th:href="@{/index}">HOME</a>
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item">
 					<a class="nav-link" th:href="@{/comingsoon}">Proximamente</a>
 				</li>
 				<li class="nav-item" sec:authorize="hasRole('ADMIN')">
 					<a class="nav-link" href="#">Administrar usuarios</a>
-				</li>
-				<li class="nav-item" sec:authorize="hasRole('ADMIN')"> <!-- //AGREGA OPCION GESTION PRODUCTOS CON LINK A SU APARTADO __ RAE -->
-					<a class="nav-link" th:href="@{/producto_gest}">Gestionar Productos</a>
 				</li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0" method="post" th:action="@{/buscar}">

@@ -2,6 +2,8 @@ package com.ecommerce.controllers;
 
 import java.util.List;
 
+import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,9 @@ import com.ecommerce.services.ProductoServiceImpl;
 
 @Controller
 public class ProductoController {
+	
+	protected final Log logger = LogFactory.getLog(this.getClass()); //AGREGO UN OBJ LOG PARA EXTRAER INFORMACION
+	
 	@Autowired
 	private ProductoServiceImpl productoService;
 	
@@ -46,4 +51,52 @@ public class ProductoController {
 	public String proximamente() {
 		return "proximamente";
 	}
+
+	//UN GET MAPPING PARA LA PESTAÑA PRODUCTOS
+	@GetMapping("/producto_gest")
+	public String producto_gest(Model model) {
+		model.addAttribute("productos",productoService.getAllProductos());
+		return "producto_gest";
+	}
+	
+	//MODEL ATRIBUTTE PARA OBTENER UN PRODUCTO
+//	@ModelAttribute("one_Producto")
+//	public Producto one_Producto(int id) {
+//		Producto one_Producto =  productoService.getOneProducto(id);
+//		return one_Producto;
+//	}
+	
+	  @GetMapping("/delete/{prdId}")
+	    public String deleteProducto(@PathVariable int prdId) {
+	        productoService.eliminaProducto(prdId);
+	        return "redirect:/index";
+	    }
+	  
+	  @GetMapping("/editprd/{prdId}")
+	    public String showEditForm(@PathVariable("prdId") int prdId, Model model) {
+	        Producto producto = productoService.getOneProducto(prdId);
+	        model.addAttribute("producto", producto);
+	        return "editprd";
+	    }
+
+	    @PostMapping("/editprd/{prdId}")
+	    public String updateProducto(@PathVariable("prdId") int prdId, @ModelAttribute Producto producto) {
+	        producto.setPrdId(prdId);
+	        productoService.nuevoProducto(producto);
+	        return "producto_gest";
+	    }
+	    
+	  @GetMapping("/addprd")
+	    public String showAddForm(Model model) {
+	        Producto producto = new Producto();
+	        model.addAttribute("producto", producto);
+	        return "addprd";
+	    }
+
+	    @PostMapping("/addprd")
+	    public String addProducto(@ModelAttribute Producto producto) {
+	        productoService.nuevoProducto(producto);
+	        return "producto_gest";
+	    }
+	
 }

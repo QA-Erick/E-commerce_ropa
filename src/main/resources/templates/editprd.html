@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit Usuario</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Usuario</h1>
+        <form th:action="@{/editprd/{prdId}(prdId=${producto.prdId})}" th:object="${producto}" method="post">
+            <input type="hidden" th:field="*{prdId}"/>
+        
+            <div class="form-group">
+                <label for="prdNom">Producto</label>
+                <input type="text" id="prdNom" th:field="*{prdNom}" class="form-control" required autofocus/>
+            </div>
+        
+            <div class="form-group">
+                <label for="prdPre">Precio</label>
+                <input type="text" id="prdPre" th:field="*{prdPre}" class="form-control" required/>
+            </div>
+			
+			<div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" th:field="*{producto.categoria.catNom}" class="form-control" required/>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>
