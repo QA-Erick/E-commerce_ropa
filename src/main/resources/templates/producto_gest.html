@@ -37,6 +37,8 @@
 	</nav>
 	<div class="container my-5"> <!-- //MODIFICAR PARA FONDO MORADO TRANSPARENTE -->
 		<!-- //AGREGAMOS UNA TABLA CON LOS CAMPOS Y BOTONES __ RAE -->
+		<h1 class="text-center">Registro de Nuevo Producto</h1>
+		<a class="btn btn-success" th:href="@{/addprd}">Agregar Nuevo Producto</a>
 		<div> <!-- //DIV PARA CONTROLAR TAMAÑO Y POSICIÓN -->
 			<table class="table table-striped bg-light" th:if="${not productos.isEmpty()}">
 				<thead>
